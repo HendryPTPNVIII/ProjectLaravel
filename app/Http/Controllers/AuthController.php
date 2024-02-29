@@ -19,6 +19,18 @@ class AuthController extends Controller
 
     }
     public function func_login(Request $request){
+        $validate = Validator::make($request->all(), [
+            'username' => 'required|min:5',
+            'password' => 'required',
+        ],[
+            'username.required' => 'username is must.',
+            'username.required' => 'password is must.',
+            'username.min' => 'username must have 5 char.',
+        ]);
+        if($validate->fails()){
+            return back()->withErrors($validate->errors())->withInput();
+        }
+
         $credentials = [
             'username' => $request['username'],
             'password' => $request['password'],
@@ -28,7 +40,7 @@ class AuthController extends Controller
             return redirect('/user/index');
         }
         else {
-            dd('error');
+            return back()->with('error','username paswword salah');
         }
     }
     public function func_logout(Request $request){

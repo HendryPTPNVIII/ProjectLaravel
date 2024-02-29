@@ -8,8 +8,18 @@ class KaryawanController extends Controller
 {
 
     public function karyawan(){
-        $datakaryawan = DB::table('karyawan')->get();
-        //dd($dataalluser);
+        $datakaryawan = DB::table('karyawan')->select('karyawan.id as id','karyawan.nik as nik','karyawan.nama as nama','karyawan.jabatan as jabatan','subdivisi.nama_subdiv as namasubdivisi','divisi.nama_divisi as namadivisi','regional.nama as namaregional')
+        ->leftjoin('subdivisi', function($join){
+            $join->on('karyawan.id_subdivisi','=','subdivisi.id');             
+          })
+        ->leftjoin('divisi', function($join){
+            $join->on('subdivisi.id_division','=','divisi.id');             
+          })
+          ->leftjoin('regional', function($join){
+            $join->on('divisi.id_regional','=','regional.id_regional');             
+          })
+        ->get();
+        //dd($datakaryawan);
         $data['datakaryawan']=$datakaryawan;
         $status=0;
         return view('karyawan.karyawan',compact('datakaryawan'));
