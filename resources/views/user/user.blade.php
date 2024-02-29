@@ -176,7 +176,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/user/listuser" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 List User
@@ -186,7 +186,7 @@
           </li>
           
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/regional/regional" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Regional
@@ -212,10 +212,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/karyawan/karyawan" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Karyawan               
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/func_logout')}}" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Log Out              
               </p>
             </a>
           </li>
@@ -249,28 +257,7 @@
     <section class="content">
     @yield('konten')
       <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
-      </div>
+      
       <!-- /.card -->
 
     </section>
