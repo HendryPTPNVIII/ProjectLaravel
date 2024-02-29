@@ -1,37 +1,30 @@
 <html>
 <head></head>
 <body>
-    <h1>LIST DATA USER</h1>
-    <button>
-    <a href="{{url('/user/form_user_add')}}">Tambah User</a>
-</button>
-<button>
-    <a href="{{url('/func_logout')}}">Logout</a>
-</button>
+    <h1>SELAMAT DATANG DI PROJECT DENTA DAN HENDRY</h1>
+    <nav>
+ <a href="/user/listuser">LIST DATA USER</a>
+ |
+ <a href="/regional/regional">REGIONAL</a>
+ |
+ <a href="/blog/kontak">DIVISION</a>
+ |
+ <a href="/blog/kontak">SUBDIVISION</a>
+ |
+ <a href="/karyawan/karyawan">KARYAWAN</a>
+ |
+ <a href="{{url('/func_logout')}}">LOG OUT</a>
+ </nav>
+
+    
     <?php
        // dd($dataalluser);
     ?>
-    <table style="width:100%" border="1">
-        <theah>
-            <tr bgcolor="#00ff80">
-                <th>NO</th>
-                <th>NAMA</th>
-                <th>EMAIL</th>
-                <th>USERNAME</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i=1; ?>
-            @foreach($dataalluser as $key)
-            <tr>
-                <th>{{ $i ++}}</th>
-                <th style="text-align: left">{{ $key->name }}</th>
-                <th style="text-align: left">{{ $key->email }}</th>
-                <th style="text-align: left"><a href="{{url('/user/form_user_edit/')}}/{{$key->id}}"> {{ $key->username}}</th>
-                <th style="text-align: left"><a href="{{url('/user/delete/')}}/{{$key->id}}"> DELETE</th>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+    <!-- bagian judul halaman blog -->
+ <h3> @yield('judul_halaman') </h3>
+ <!-- bagian konten blog -->
+ @yield('konten')
+    
 </body>
 </html>

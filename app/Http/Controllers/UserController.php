@@ -28,6 +28,15 @@ class UserController extends Controller
         //return view('user.user',$data);
 
     }
+
+    public function listuser(){
+        $dataalluser = DB::table('users')->get();
+        //dd($dataalluser);
+        $data['dataalluser']=$dataalluser;
+        $status=0;
+        return view('user.listuser',compact('dataalluser'));
+        }
+
     public function view_form_user($id=null){
         if($id){
             $datauser=DB::table('users')->where('id',$id)->first();
@@ -66,7 +75,7 @@ class UserController extends Controller
             'email'=> $request->email
         ];
         DB::table('users')->where('id',$iduser)->update($adduser);
-        return back();
+        return redirect ('/user/listuser');
     }
     public function func_delete($id=null){
         DB::table('users')->where('id',$id)->delete();

@@ -1,7 +1,10 @@
-<html>
-<head></head>
-<body>
-    <h1>FORM USER</h1>
+
+@extends('user.user')
+ 
+@section('judul_halaman', 'TAMBAH DATA USER')
+ 
+
+@section('konten')
     <div class="form">
         @if(isset($datauser->username))
         <form action = "{{url('/user/update')}}" method="post">
@@ -28,5 +31,4 @@
         </button>
 </form>
     </div>
-</body>
-</html>
+    @endsection
