@@ -26,9 +26,9 @@
     </div>
 </form>
  
-<table style="width:100%" border="1">
+<table class="table table-hover">
         <theah>
-            <tr bgcolor="#00ff80">
+            <tr>
                 <th>NO</th>
                 <th>REGIONAL</th>
                 <th>NAMA BAGIAN</th>

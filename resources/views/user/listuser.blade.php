@@ -9,10 +9,10 @@
 <button>
     <a href="{{url('/user/form_user_add')}}">Tambah User</a>
 </button>
- 
-<table style="width:100%" border="1">
+<div class="box-body table-responsive no-padding">
+<table class="table table-hover">
         <theah>
-            <tr bgcolor="#00ff80">
+            <tr>
                 <th>NO</th>
                 <th>NAMA</th>
                 <th>EMAIL</th>
@@ -33,5 +33,5 @@
             @endforeach
         </tbody>
     </table>
- 
+</div>
 @endsection
