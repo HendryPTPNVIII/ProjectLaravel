@@ -10,9 +10,9 @@
     <a href="{{url('/regional/form_regional_add')}}">Tambah Regional</a>
 </button>
  
-<table style="width:100%" border="1">
+<table class="table table-hover">
         <theah>
-            <tr bgcolor="#00ff80">
+            <tr>
                 <th>NO</th>
                 <th>KODE REGIONAL</th>
                 <th>NAMA</th>
