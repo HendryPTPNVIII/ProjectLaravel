@@ -1,7 +1,10 @@
-<html>
-<head></head>
-<body>
-    <h1>FORM DIVISI</h1>
+@extends('user.user')
+ 
+@section('judul_halaman', 'FORM DIVISI')
+ 
+
+@section('konten')
+
     <div class="form">
         @if(isset($data->kode_divisi))
         <form action = "{{url('/divisi/update')}}" method="post">
@@ -62,5 +65,4 @@
         </button>
 </form>
     </div>
-</body>
-</html>
+@endsection

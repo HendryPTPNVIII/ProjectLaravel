@@ -22,8 +22,9 @@
             @foreach($data as $key)
             <tr>
                 <td>{{ $i ++}}</td>
-                <td style="text-align: left"><a href="{{url('/subdivisi/form_subdivisi_edit/')}}/{{$key->id}}"> {{ $key->nama_subdiv }}</td>
+                <td style="text-align: left">{{ $key->nama_subdiv }}</td>
                 <td style="text-align: left">{{ $key->id_division }}</td>
+                <th style="text-align: left"><a href="{{url('/subdivisi/form_subdivisi_edit/')}}/{{$key->id}}"> EDIT</th>
                 <th style="text-align: left"><a href="{{url('/subdivisi/delete/')}}/{{$key->id}}"> DELETE</th>
             </tr>
             @endforeach

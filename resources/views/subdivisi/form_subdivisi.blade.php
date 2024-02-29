@@ -1,7 +1,10 @@
-<html>
-<head></head>
-<body>
-    <h1>FORM SUBDIVISI</h1>
+@extends('user.user')
+ 
+@section('judul_halaman', 'FORM SUBDIVISI')
+ 
+
+@section('konten')
+
     <div class="form">
         @if(isset($data->id))
             <form action = "{{url('/subdivisi/update')}}" method="post">
@@ -34,7 +37,8 @@
         <button class="add_user_btn_primary">
         Simpan
         </button>
-</form>
+        </form>
     </div>
 </body>
 </html>
+@endsection
