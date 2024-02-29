@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegionalController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\SubdivisiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,4 +58,21 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/form_karyawan_edit/{id}', [KaryawanController::class, 'view_form_karyawan']);
         Route::get('/delete/{id}', [KaryawanController::class, 'func_delete']);
     });
+    Route::prefix('divisi')->group(function(){
+        Route::get('/index', [DivisiController::class, 'index'])->name('divisi.index');
+        Route::get('/form_divisi_add', [DivisiController::class, 'view_form_divisi']);
+        Route::get('/form_divisi_edit/{id}', [DivisiController::class, 'view_form_divisi']);
+        Route::post('/store', [DivisiController::class, 'func_store']);
+        Route::post('/update', [DivisiController::class, 'func_update']);
+        Route::get('/delete/{id}', [DivisiController::class, 'func_delete']);
+    });
+    Route::prefix('subdivisi')->group(function(){
+        Route::get('/index', [SubdivisiController::class, 'index']);
+        Route::get('/form_subdivisi_add', [SubdivisiController::class, 'view_form_subdivisi']);
+        Route::get('/form_subdivisi_edit/{id}', [SubdivisiController::class, 'view_form_subdivisi']);
+        Route::post('/store', [SubdivisiController::class, 'func_store']);
+        Route::post('/update', [SubdivisiController::class, 'func_update']);
+        Route::get('/delete/{id}', [SubdivisiController::class, 'func_delete']);
+    });
 });
+
