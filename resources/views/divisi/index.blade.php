@@ -1,19 +1,16 @@
-<html>
-<head></head>
-<body>
-    <h1>LIST DATA DIVISI</h1>
+@extends('user.user')
+ 
+@section('judul_halaman', 'LIST DATA DIVISI')
+ 
+
+@section('konten')
+
     <button>
     <a href="{{url('/divisi/form_divisi_add')}}">Tambah Divisi</a>
-</button>
-<button>
-    <a href="{{url('/func_logout')}}">Logout</a>
-</button>
-    <?php
-       // dd($dataalluser);
-    ?>
-    <table style="width:100%" border="1">
+    </button>
+    <table class="table table-hover">
         <theah>
-            <tr bgcolor="#00ff80">
+            <tr>
                 <th>NO</th>
                 <th>REGIONAL</th>
                 <th>NAMA DIVISI</th>
@@ -35,5 +32,4 @@
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+@endsection
